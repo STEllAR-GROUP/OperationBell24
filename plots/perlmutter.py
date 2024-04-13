@@ -17,7 +17,7 @@ df = pd.read_csv("perlmutter_12.csv", header=None, delimiter=r",")
 thread12 = df[0]
 time12=df[1]
 
-nodecount = [1,4,16,64,256,1978]
+nodecount = [1,4,16,64,256,1720]
 
 
 labelsx= []
@@ -29,6 +29,8 @@ for i in range (1,len(nodecount)):
 ydata=[]
 ylabel=[]
 
+thread12[5] = 1475
+
 for i in [0,int(len(time10)/2)]:
   ydata.append(1.68309E+12*26/time10[i]/10**12)
 
@@ -38,7 +40,6 @@ for i in [0,int(len(time11)/2)]:
 for i in [0,len(time12)-1]:
   ydata.append(1.07915E+14*26/time12[i]/10**12)
 
-print(ydata)
 
 for d in ydata:
   ylabel.append('{0:.2f}'.format(d))
