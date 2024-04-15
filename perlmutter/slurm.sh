@@ -15,8 +15,6 @@ if [[ "$pp" == "lci" ]]; then
   export LCI_SERVER_NUM_PKTS=65536
   export LCI_SERVER_MAX_CQES=65536
   export LCI_PACKET_SIZE=12288
-  export LCI_MT_BACKEND=hashqueue
-  export LCI_CQ_TYPE=array_atomic_faa
   export LCI_USE_DREG=0
   export LCI_ENABLE_PRG_NET_ENDPOINT=0
   extra_args="--hpx:ini=hpx.parcel.lci.progress_type=worker --hpx:ini=hpx.parcel.lci.ndevices=2"
