@@ -7,6 +7,7 @@
 # Users need to use `sbatch` to submit this script to SLURM, specifying the desired node count.
 
 pp=${1:-lci}
+level=${2:-11}
 
 extra_args=""
 if [[ "$pp" == "lci" ]]; then
@@ -21,7 +22,7 @@ if [[ "$pp" == "lci" ]]; then
 fi
 export PMI_MAX_KVS_ENTRIES=4096
 
-cd path/to/octotiger/q07_l10/close_to_merger || exit 1
+cd path/to/octotiger/q07_l${level}/close_to_merger || exit 1
 
 srun -l octotiger --disable_output=on --amr_boundary_kernel_type=AMR_OPTIMIZED \
   --optimize_local_communication=1 --print_times_per_timestep=1 --config_file=dwd.ini \
